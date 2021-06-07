@@ -1,59 +1,36 @@
 /** @type {import('eslint').Linter.Config} */
-const js = {
+module.exports = {
+  root: true,
   extends: [
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:prettier/recommended",
-    "prettier",
-    "prettier/react",
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:prettier/recommended',
+    'prettier',
   ],
-  plugins: ["react", "prettier"],
+  plugins: ['@typescript-eslint', 'react', 'prettier'],
   env: {
-    node: true,
-    browser: true,
-    es2020: true,
+    'shared-node-browser': true,
+    commonjs: true,
+    jest: true,
   },
+  parser: '@typescript-eslint/parser',
   parserOptions: {
-    sourceType: "module",
-    ecmaVersion: 2020,
+    sourceType: 'module',
     ecmaFeatures: {
       jsx: true,
     },
   },
   settings: {
     react: {
-      version: "latest",
+      version: 'latest',
     },
   },
   rules: {
-    "react/prop-types": "off",
-    // Disabled for the React 17 new JSX transform.
-    "react/jsx-uses-react": "off",
-    "react/react-in-jsx-scope": "off",
+    'prettier/prettier': 'warn',
+    '@typescript-eslint/no-var-requires': 'off',
+    'react/jsx-uses-react': 'off',
+    'react/react-in-jsx-scope': 'off',
   },
-};
-
-/** @type {import('eslint').Linter.Config} */
-const ts = {
-  ...js,
-  extends: [
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended",
-    "prettier",
-    "prettier/react",
-    "prettier/@typescript-eslint",
-  ],
-  plugins: ["react", "@typescript-eslint", "prettier"],
-  parser: "@typescript-eslint/parser",
-  rules: {
-    ...js.rules,
-  },
-};
-
-/** @type {import('eslint').Linter.Config} */
-module.exports = {
-  ...js,
-  overrides: [{ files: ["**/*.ts", "**/*.tsx"], ...ts }],
+  ignorePatterns: ['node_modules', 'lib', 'coverage'],
 };

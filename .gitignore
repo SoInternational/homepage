@@ -1,5 +1,7 @@
 node_modules/
-packages-cache/
+out/
 
 .DS_Store
+.commit
 *.log
+*.tgz

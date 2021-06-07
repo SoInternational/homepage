@@ -1,7 +1,5 @@
 {
   "recommendations": [
-    "kisstkondoros.vscode-gutter-preview",
-    "eamodio.toggle-excluded-files",
     "streetsidesoftware.code-spell-checker",
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode"
