@@ -1,6 +1,6 @@
 #!/bin/sh
 if [ -e .commit ]; then
   rm .commit
-  git add docs/bundle docs/index.html
-  git commit --amend -C HEAD --no-verify
+  git add docs/bundle docs/index.html >/dev/null
+  git commit --amend -C HEAD --no-verify >/dev/null
 fi
