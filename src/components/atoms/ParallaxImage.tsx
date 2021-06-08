@@ -38,17 +38,25 @@ export default function ParallaxImage({
         min-width: ${minWidth};
         overflow: hidden;
 
-        > .parallax-image__inner {
+        > .parallax-image__shift {
           position: absolute;
           background-image: ${src};
           background-position: center;
           background-repeat: no-repeat;
           background-size: cover;
         }
+
+        > .parallax-image__vignette {
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          box-shadow: inset 0 0 1000px black;
+          pointer-events: none;
+        }
       `}
       <div ref={ref}>
         <div
-          className={'parallax-image__inner'}
+          className={'parallax-image__shift'}
           style={{
             top: `${(scaleHeight - 1) * parallax.y * -100}%`,
             bottom: `${(scaleHeight - 1) * (parallax.y - 1) * 100}%`,
@@ -56,6 +64,7 @@ export default function ParallaxImage({
             right: `${(scaleWidth - 1) * (parallax.x - 1) * 100}%`,
           }}
         ></div>
+        <div className={'parallax-image__vignette'} />
         {children}
       </div>
     </Styled>

@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
 import { Styled, css } from 'react-css-in-js';
 import ParallaxImage from '../atoms/ParallaxImage';
-import src from '../../images/recal-media-ueBIGLmiI5A-unsplash.jpg';
+import src from '../../images/william-bout-7cdFZmLlWOM-unsplash.jpg';
 
 export default function Hero(): ReactElement {
   return (
