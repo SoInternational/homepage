@@ -1,31 +1,63 @@
 import { ReactElement, ReactNode } from 'react';
 import { css, Styled } from 'react-css-in-js';
+import useParallax from '../../hooks/useParallax';
 
 export interface IParallaxImageProps {
   src: string;
+  height?: string;
   minHeight?: string;
+  scaleHeight?: number;
+  width?: string;
+  minWidth?: string;
+  scaleWidth?: number;
   className?: string;
   children?: ReactNode;
 }
 
 export default function ParallaxImage({
   src,
-  minHeight = '100vh',
+  height,
+  minHeight,
+  scaleHeight = 1,
+  width,
+  minWidth,
+  scaleWidth = 1,
   className,
   children,
 }: IParallaxImageProps): ReactElement {
+  const [ref, parallax] = useParallax<HTMLDivElement>();
+  console.log(parallax);
+
   return (
     <Styled className={className}>
       {css`
         position: relative;
-        background-image: ${src};
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+        height: ${height};
         min-height: ${minHeight};
+        width: ${width};
+        min-width: ${minWidth};
+        overflow: hidden;
+
+        > .parallax-image__inner {
+          position: absolute;
+          background-image: ${src};
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
       `}
-      <div>{children}</div>
+      <div ref={ref}>
+        <div
+          className={'parallax-image__inner'}
+          style={{
+            top: `${(scaleHeight - 1) * parallax.y * -100}%`,
+            bottom: `${(scaleHeight - 1) * (parallax.y - 1) * 100}%`,
+            left: `${(scaleWidth - 1) * parallax.x * -100}%`,
+            right: `${(scaleWidth - 1) * (parallax.x - 1) * 100}%`,
+          }}
+        ></div>
+        {children}
+      </div>
     </Styled>
   );
 }

@@ -7,7 +7,8 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 /** @type {import('webpack').Configuration} */
 module.exports = (env) => {
   return {
-    mode: env.WEBPACK_BUNDLE ? 'production' : 'development',
+    // mode: env.WEBPACK_BUNDLE ? 'production' : 'development',
+    mode: 'production',
     target: 'web',
     entry: path.resolve(process.cwd(), 'src'),
     output: {
@@ -32,7 +33,7 @@ module.exports = (env) => {
               use: ['babel-loader'],
             },
             {
-              test: /\.(gif|jpe?g|png|apng|svg|webp)$/,
+              test: /\.(gif|jpe?g|png|apng|svg|webp|woff2)$/,
               use: [
                 {
                   loader: 'url-loader',

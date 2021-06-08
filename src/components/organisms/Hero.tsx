@@ -1,14 +1,15 @@
 import { ReactElement } from 'react';
 import { Styled, css } from 'react-css-in-js';
 import ParallaxImage from '../atoms/ParallaxImage';
-import src from '../../images/hero.jpg';
-
-const overlayStart = 'rgba(0, 0, 0, 0.3)';
-const overlayEnd = 'rgba(0, 0, 0, 0.7)';
+import src from '../../images/recal-media-ueBIGLmiI5A-unsplash.jpg';
 
 export default function Hero(): ReactElement {
   return (
-    <ParallaxImage src={`linear-gradient(${overlayStart}, ${overlayEnd}), url('${src}')`}>
+    <ParallaxImage
+      src={`linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('${src}')`}
+      minHeight={'100vh'}
+      scaleHeight={1.5}
+    >
       <Styled>
         {css`
           position: absolute;
@@ -18,16 +19,15 @@ export default function Hero(): ReactElement {
           flex-direction: column;
           align-items: center;
           justify-content: center;
-          text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+          color: white;
+          text-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
 
           .hero-title {
-            font-family: 'Rock Salt', cursive;
-            color: white;
+            font-family: SoInternational, cursive;
             font-size: 3rem;
-            /* text-shadow: 0 5px 10px black; */
           }
           .hero-subtitle {
-            color: #aaa;
+            opacity: 0.6;
             font-size: 1.4rem;
           }
         `}
