@@ -1,7 +1,7 @@
 import { useQuery } from 'react-query';
 import { z } from 'zod';
 
-const url = '/backgrounds/_index.json';
+const url = '/backgrounds/index.json';
 const schema = z.array(z.string());
 
 export default (): string[] => {

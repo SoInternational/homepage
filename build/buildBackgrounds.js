@@ -9,5 +9,5 @@ module.exports = () => {
     return /\.(jpe?g|png)$/.test(filename) ? [...acc, filename] : acc;
   }, []);
 
-  fs.writeFileSync(path.resolve(postsRoot, '_index.json'), JSON.stringify(files, null, '  '));
+  fs.writeFileSync(path.resolve(postsRoot, 'index.json'), JSON.stringify(files, null, '  '));
 };

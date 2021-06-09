@@ -45,7 +45,7 @@ module.exports = () => {
     .sort((a, b) => b.key.localeCompare(a.key))
     .map((entry) => entry.value);
 
-  fs.writeFileSync(path.resolve(postsRoot, '_index.json'), JSON.stringify(files, null, '  '));
+  fs.writeFileSync(path.resolve(postsRoot, 'index.json'), JSON.stringify(files, null, '  '));
 
   function findImageUrl({ children = [], type, url }) {
     if (type === 'image') {
