@@ -12,7 +12,7 @@ module.exports = (env) => {
     target: 'web',
     entry: path.resolve(process.cwd(), 'src'),
     output: {
-      path: path.resolve(process.cwd(), 'docs'),
+      path: path.resolve(process.cwd(), 'public'),
       filename: 'bundle/[name].[chunkhash:8].js',
       assetModuleFilename: 'bundle/[name].[contenthash:8].[ext]',
       publicPath: '/',
@@ -66,7 +66,7 @@ module.exports = (env) => {
         : []),
     ],
     devServer: {
-      contentBase: path.join(__dirname, 'docs'),
+      contentBase: path.join(__dirname, 'public'),
       stats: 'minimal',
       compress: true,
       port: 3000,

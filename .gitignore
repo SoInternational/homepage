@@ -1,8 +1,8 @@
 node_modules/
 out/
 
-/docs/bundle
-/docs/index.html
+/public/bundle
+/public/index.html
 .DS_Store
 .commit
 *.log

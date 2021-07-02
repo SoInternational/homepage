@@ -11,11 +11,11 @@ The homepage of Bhavna and Chris (and Mimi).
 
 ## Adding Blog Posts
 
-Add a markdown file with the filename format `<YEAR>-<MONTH>-<DAY>-<TITLE>.md` to the [docs/posts](docs/posts) directory.
+Add a markdown file with the filename format `<YEAR>-<MONTH>-<DAY>-<TITLE>.md` to the [public/posts](public/posts) directory.
 
 - Hyphens in the title will be replaced with spaces.
 - [URL encoded](https://en.wikipedia.org/wiki/Percent-encoding) characters in the title will be decoded.
 
 Edit the markdown file to write the post.
 
- - Add images to the [docs/posts/assets](docs/posts/assets) directory and reference them in the usual markdown way: `![title](assets/<filename>)`
+ - Add images to the [public/posts/assets](public/posts/assets) directory and reference them in the usual markdown way: `![title](assets/<filename>)`

@@ -7,7 +7,7 @@ const remarkParse = require('remark-parse');
 const unified = require('unified');
 
 module.exports = () => {
-  const postsRoot = path.resolve(__dirname, '../docs/posts');
+  const postsRoot = path.resolve(__dirname, '../public/posts');
   const files = fs
     .readdirSync(postsRoot)
     .reduce((acc, filename) => {

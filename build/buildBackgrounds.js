@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 
 module.exports = () => {
-  const postsRoot = path.resolve(__dirname, '../docs/backgrounds');
+  const postsRoot = path.resolve(__dirname, '../public/backgrounds');
   const files = fs.readdirSync(postsRoot).reduce((acc, filename) => {
     return /\.(jpe?g|png)$/.test(filename) ? [...acc, filename] : acc;
   }, []);

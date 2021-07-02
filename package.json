@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "test": "tsc && eslint src",
-    "build": "del-cli docs/bundle docs/index.html && node ./build && webpack --mode=production",
+    "build": "del-cli public/bundle public/index.html && node ./build && webpack --mode=production",
     "start": "node ./build && webpack serve"
   },
   "dependencies": {
