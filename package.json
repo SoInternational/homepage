@@ -1,7 +1,6 @@
 {
   "private": true,
   "scripts": {
-    "prepare": "husky install",
     "test": "tsc && eslint src",
     "build": "del-cli docs/bundle docs/index.html && node ./build && webpack --mode=production",
     "start": "node ./build && webpack serve"
@@ -42,7 +41,6 @@
     "eslint-plugin-react": "^7.24.0",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.3.1",
-    "husky": "^6.0.0",
     "prettier": "^2.3.1",
     "remark": "^13.0.0",
     "remark-parse": "^9.0.0",
